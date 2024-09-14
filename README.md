@@ -13,14 +13,14 @@ This document outlines the design specifications for the Private Tuition Classes
 
 ## 3. App Pages Overview
 
-1. Login/Signup Page
-2. Home Page
-3. Course List Page
-4. Course Detail Page
-5. Admission Form Page
-6. Payment Page
-7. Profile Page
-8. Admin Dashboard
+1. Splashscreen and Login/Signup Page      |-> Swastik
+2. Home Page                               |-> Vishwajeet
+3. Course List Page                        |-> Pooja
+4. Course Detail Page                      |-> Pooja
+5. Admission Form Page                     |-> Vishwajeet
+6. Payment Page                            |-> Pallavi
+7. Profile Page                            |-> Sagar
+8. Admin Dashboard                         |-> Pallavi
 
 ---
 
@@ -140,23 +140,15 @@ This document outlines the design specifications for the Private Tuition Classes
   - Stack elements vertically for better scrolling.
   - Touch-friendly buttons and form fields.
 
-- **Tablet View**:
-  - Adjust grid layouts for courses to display 2-3 per row.
-  - Expand filter panels by default.
-
-- **Desktop View**:
-  - Full-width grids for course listings.
-  - Sidebar filters for easy navigation.
-
 ---
 
 ## 7. Color Scheme & Typography
 
-- **Primary Colors**: Blue (#1E90FF), White (#FFFFFF), Light Grey (#F5F5F5).
+- **Primary Colors**: #1d8599, #f7c12c , White (#FFFFFF), #049b88.
 - **Secondary Colors**: Green (#28A745) for action buttons, Red (#FF6347) for warnings/errors.
 - **Typography**: 
   - Headings: `Roboto`, 24px bold.
-  - Body Text: `Open Sans`, 16px regular.
+  - Body Text: `Poppins`, 16px regular.
 
 ---
 
