@@ -3,20 +3,18 @@ package com.ArcherInfotech.tutionapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link user_Registration#newInstance} factory method to
+ * Use the {@link getting_started_fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class user_Registration extends Fragment {
-    private FragmentManager fragmentManager;
+public class getting_started_fragment extends Fragment {
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,7 +24,7 @@ public class user_Registration extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public user_Registration() {
+    public getting_started_fragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +34,11 @@ public class user_Registration extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment user_Registration.
+     * @return A new instance of fragment getting_started_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static user_Registration newInstance(String param1, String param2) {
-        user_Registration fragment = new user_Registration();
+    public static getting_started_fragment newInstance(String param1, String param2) {
+        getting_started_fragment fragment = new getting_started_fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,24 +58,7 @@ public class user_Registration extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_user__registration, container, false);
-
-
-        TextView signin = view.findViewById(R.id.signin);
-        fragmentManager = getParentFragmentManager();
-
-
-        signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.frame, new User_Login())
-                        .addToBackStack(null)  // Add to backstack so user can go back
-                        .commit();
-            }
-        });
         // Inflate the layout for this fragment
-        return view;
+        return inflater.inflate(R.layout.fragment_getting_started_fragment, container, false);
     }
 }

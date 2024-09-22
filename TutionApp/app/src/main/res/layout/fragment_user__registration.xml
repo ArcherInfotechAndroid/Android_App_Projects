@@ -31,48 +31,55 @@
              android:layout_marginStart="5dp"
              android:layout_marginEnd="5dp"
              android:layout_marginTop="40dp"
+             android:textColor="@color/black"
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
              android:elevation="10dp"
              android:gravity="center"
-             android:hint="Enter full name" />
+             android:hint="Enter full name"
+             android:textColorHint="#61000000"/>
 
          <EditText
              android:layout_width="319dp"
              android:layout_height="70dp"
              android:layout_marginStart="5dp"
              android:layout_marginEnd="5dp"
+             android:textColor="@color/black"
              android:layout_marginTop="30dp"
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
              android:elevation="10dp"
-
+             android:textColorHint="#61000000"
              android:gravity="center"
              android:hint="Enter email" />
 
          <EditText
              android:layout_width="319dp"
              android:layout_height="70dp"
+             android:textColor="@color/black"
              android:layout_marginStart="5dp"
              android:layout_marginEnd="5dp"
              android:layout_marginTop="30dp"
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
              android:elevation="10dp"
-
+             android:textColorHint="#61000000"
+             android:inputType="textPassword"
              android:gravity="center"
              android:hint="Enter password" />
 <EditText
     android:layout_width="319dp"
     android:layout_height="70dp"
+    android:textColor="@color/black"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp"
              android:layout_marginTop="30dp"
-
+    android:textColorHint="#61000000"
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
              android:elevation="10dp"
              android:gravity="center"
+            android:inputType="textPassword"
              android:hint="Confirm password" />
 
          <CheckBox
@@ -112,11 +119,12 @@
                  android:textColor="@color/primary" />
 
              <TextView
+                 android:id="@+id/signin"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:layout_gravity="center"
                 android:layout_marginStart="5dp"
-                 android:text="Sign up"
+                 android:text="Sign in"
                  android:textColor="@color/primary" />
 
          </LinearLayout>

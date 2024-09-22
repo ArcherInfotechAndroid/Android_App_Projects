@@ -3,10 +3,12 @@ package com.ArcherInfotech.tutionapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,8 +16,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class User_Login extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
+    private FragmentManager fragmentManager;    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -58,7 +59,22 @@ public class User_Login extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_user__login, container, false);
+
+        TextView dont = view.findViewById(R.id.dont);
+        fragmentManager = getParentFragmentManager();
+
+        dont.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Replace the current fragment with the registration fragment
+                fragmentManager.beginTransaction()
+                        .replace(R.id.frame, new user_Registration())
+                        .addToBackStack(null)  // Add to backstack so user can go back
+                        .commit();
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user__login, container, false);
+        return view;
     }
 }

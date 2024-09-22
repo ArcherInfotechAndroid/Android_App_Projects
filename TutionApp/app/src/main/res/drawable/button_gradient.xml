@@ -10,8 +10,8 @@
             android:type="linear"/>
 
             <!-- Optional: adding rounded corners to the button -->
-            <corners android:radius="8dp" />
-            <corners android:radius="40dp"/>
+            <corners android:radius="2dp" />
+            <corners android:radius="24dp"/>
         </shape>
 
     </item>

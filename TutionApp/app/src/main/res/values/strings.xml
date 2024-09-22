@@ -12,4 +12,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="agree_with_terms_and_condition">Agree with Terms and Condition</string>
+    <string name="discription1">• Archer InfoTech specializes in offering cutting-edge information technology
+solutions tailored to meet the diverse needs ot their clients. Their services
+range from software development and consulting to cybersecurity cloud computing, ensuring businesses stay ahead in the digital landscape.</string>
+    <string name="discription2">• The company emphasizes a customer-first mentality. focusing on
+understanding and addressing the unique challenges and objectives of each
+client. By providing personalized and efficient solutions, Archer InfoTech
+aims to foster long-term partnerships and deliver exceptional value.</string>
+    <string name="discription3">• Archer IntoTech boasts a team of seasoned professionals with extensive
+industry knowledge and technical expertise. Their commitment to continuous
+learning and staying updated with the latest technological advancements
+enables them to provide innovative and reliable solutions that drive business</string>
 </resources>
