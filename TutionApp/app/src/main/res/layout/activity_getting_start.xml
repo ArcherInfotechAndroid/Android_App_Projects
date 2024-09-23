@@ -6,24 +6,37 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/secondary"
     tools:context=".GettingStart">
 
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="583dp" />
+        android:layout_height="624dp" />
+
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewpager"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+
+        android:gravity="center"
+        android:orientation="horizontal" />
 
     <LinearLayout
         android:id="@+id/li"
-        android:layout_below="@+id/viewpager"
         android:layout_width="341dp"
-        android:layout_height="72dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/viewpager"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="@drawable/button_gradient"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
