@@ -46,12 +46,7 @@
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:justificationMode="inter_word"
-        android:text="Archer InfoTech, a premier provider of
-innovative technology solutions, offers a
-seamless blend of cutting-edge software
-development, IT consulting, and digital
-transformation services to empower
-businesses in achieving their full potential."
+        android:text="@string/archer_infotech_a_premier_provider_of_innovative_technology_solutions_offers_a_seamless_blend_of_cutting_edge_software_development_it_consulting_and_digital_transformation_services_to_empower_businesses_in_achieving_their_full_potential"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
