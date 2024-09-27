@@ -13,10 +13,28 @@
         android:theme="@style/Theme.TutionApp"
         tools:targetApi="31">
         <activity
-            android:name=".HomePageActivity"
+            android:name=".EmiPayment"
+            android:exported="false" />
+        <activity
+            android:name=".CardPayment"
+            android:exported="false" />
+        <activity
+            android:name=".UPIPayment"
+            android:exported="false" />
+        <activity
+            android:name=".NetBanking"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin_dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".HomePageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".payment"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
