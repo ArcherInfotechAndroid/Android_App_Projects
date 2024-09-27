@@ -33,7 +33,7 @@ public class Login_signUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+      
         setContentView(R.layout.activity_login_sign_up);
 
         fragmentManager= getSupportFragmentManager();
@@ -51,7 +51,7 @@ public class Login_signUp extends AppCompatActivity {
         userbtn = findViewById(R.id.userbtn);
         adminbtn = findViewById(R.id.adminbtn);
         viewPager2 = findViewById(R.id.studentimg);
-        FragmentStateAdapter adapter = new FragmentStateAdapter(this);
+        ImageSliderAdapter adapter = new ImageSliderAdapter(this);
         viewPager2.setAdapter(adapter);
 
 

@@ -6,8 +6,11 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.ArcherInfotech.tutionapp.AboutUs;
 import com.ArcherInfotech.tutionapp.Faculty_info;
+import com.ArcherInfotech.tutionapp.Student_image2;
+import com.ArcherInfotech.tutionapp.Student_image3;
 import com.ArcherInfotech.tutionapp.getting_started_fragment;
 import com.ArcherInfotech.tutionapp.howto;
+import com.ArcherInfotech.tutionapp.student_image1;
 
 public class ImageSliderAdapter  extends androidx.viewpager2.adapter.FragmentStateAdapter {
 
@@ -31,13 +34,12 @@ public class ImageSliderAdapter  extends androidx.viewpager2.adapter.FragmentSta
 
         switch (position) {
             case 0:
-                return new getting_started_fragment();
+                return new student_image1();
             case 1:
-                return new Faculty_info();
+                return new Student_image2();
             case 2:
-                return new howto();
-            case 3:
-                return new AboutUs();
+                return new Student_image3();
+
             default:
                 return new Fragment();  // Default case
         }
