@@ -9,11 +9,12 @@
     android:backgroundTint="@color/secondary"
     tools:context=".GettingStart">
 
-
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="624dp" />
+        android:layout_width="329dp"
+        android:layout_height="544dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
 
     <LinearLayout
         android:id="@+id/dotsLayout"

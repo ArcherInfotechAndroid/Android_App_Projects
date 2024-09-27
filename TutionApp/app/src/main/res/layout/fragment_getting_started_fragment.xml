@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,6 +9,9 @@
     android:layout_height="match_parent"
     tools:context=".GettingStart">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
@@ -42,6 +45,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
+        android:justificationMode="inter_word"
         android:text="Archer InfoTech, a premier provider of
 innovative technology solutions, offers a
 seamless blend of cutting-edge software
@@ -57,5 +61,5 @@ businesses in achieving their full potential."
 
 
 
-
-</RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

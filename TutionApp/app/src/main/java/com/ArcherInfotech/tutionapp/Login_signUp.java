@@ -1,40 +1,58 @@
 package com.ArcherInfotech.tutionapp;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.ArcherInfotech.tutionapp.Adapter.FragmentStateAdapter;
+import com.ArcherInfotech.tutionapp.Adapter.ImageSliderAdapter;
 
 public class Login_signUp extends AppCompatActivity {
     FrameLayout frameLayout;
     AppCompatButton userbtn,adminbtn;
-    FragmentManager fragmentManager= getSupportFragmentManager();
+    private int[] images = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
+    private Handler handler = new Handler(Looper.getMainLooper());
+    private Runnable runnable;
+    LinearLayout linearLayout,dotsLayout;
+    private int numOfFragments = 3;
+    ViewPager2 viewPager2;
+    private ImageView[] dots;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login_sign_up);
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
 
+        fragmentManager= getSupportFragmentManager();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.frame);
+         fragment = fragmentManager.findFragmentById(R.id.frame);
+        if (fragment == null) {
+            fragmentManager.beginTransaction().replace(R.id.frame, new User_Login()).commit();
+        }
         fragmentManager.beginTransaction().replace(R.id.frame,new User_Login()).commit();
 
 
 
+
+        
         userbtn = findViewById(R.id.userbtn);
         adminbtn = findViewById(R.id.adminbtn);
-
+        viewPager2 = findViewById(R.id.studentimg);
+        FragmentStateAdapter adapter = new FragmentStateAdapter(this);
+        viewPager2.setAdapter(adapter);
 
 
 
@@ -47,6 +65,8 @@ public class Login_signUp extends AppCompatActivity {
             }
         });
 
+
+
         adminbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,5 +76,10 @@ public class Login_signUp extends AppCompatActivity {
             }
         });
 
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(runnable); // Stop auto-scroll when the activity is destroyed
     }
 }
