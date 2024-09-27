@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">TutionApp</string>
+
+
+        <!-- Other strings -->
+    <string name="select_course">Select a course</string>
+        <string-array name="course_list">
+            <item>Select a course</item>
+            <item>C</item>
+            <item>C++</item>
+            <item>Java</item>
+            <item>Python</item>
+            <item>React</item>
+            <item>Angular + Node js</item>
+            <item>C#</item>
+            <item>Android</item>
+            <item>HTML+CSS+JS</item>
+            <item>SQL</item>
+
+        </string-array>
+
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -23,4 +43,5 @@ aims to foster long-term partnerships and deliver exceptional value.</string>
 industry knowledge and technical expertise. Their commitment to continuous
 learning and staying updated with the latest technological advancements
 enables them to provide innovative and reliable solutions that drive business</string>
+
 </resources>
