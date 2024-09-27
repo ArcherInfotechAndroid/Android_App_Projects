@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">TutionApp</string>
+
+        <!-- Other strings -->
+    <string name="select_course">Select a course</string>
+        <string-array name="course_list">
+            <item>Select a course</item>
+            <item>C</item>
+            <item>C++</item>
+            <item>Java</item>
+            <item>Python</item>
+            <item>React</item>
+            <item>Angular + Node js</item>
+            <item>C#</item>
+            <item>Android</item>
+            <item>HTML+CSS+JS</item>
+            <item>SQL</item>
+
+        </string-array>
+
 </resources>
