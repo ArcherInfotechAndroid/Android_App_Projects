@@ -1,5 +1,6 @@
 package com.ArcherInfotech.tutionapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,13 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.ArcherInfotech.tutionapp.SQLiteDB.DBHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +24,11 @@ import android.widget.TextView;
  */
 public class user_Registration extends Fragment {
     private FragmentManager fragmentManager;
+    EditText editName,editPassword,editCpassword,editEmail;
+    CheckBox terms;
+    Button registerBtn;
+    DBHelper dbHelper;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -63,9 +75,64 @@ public class user_Registration extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_user__registration, container, false);
 
-
+        editName = view.findViewById(R.id.editfullname);
+        editEmail= view.findViewById(R.id.editemail);
+        editPassword = view.findViewById(R.id.password);
+        editCpassword = view.findViewById(R.id.confirmpassword);
+        terms = view.findViewById(R.id.terms);
+        registerBtn = view.findViewById(R.id.registerbtn);
+        dbHelper = new DBHelper(getContext());
         TextView signin = view.findViewById(R.id.signin);
         fragmentManager = getParentFragmentManager();
+
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                if(!terms.isChecked()) {
+                    Toast.makeText(getContext().getApplicationContext(), "Please accept terms and conditions", Toast.LENGTH_SHORT).show();
+                }
+                String username = editName.getText().toString();
+                String useremail = editEmail.getText().toString();
+                String userPassword = editPassword.getText().toString();
+                String userCpassword = editCpassword.getText().toString();
+
+
+                if(username.isEmpty() || useremail.isEmpty() || userPassword.isEmpty() || userCpassword.isEmpty() ){
+                    Toast.makeText(getContext().getApplicationContext(),    "plase fill all the fields", Toast.LENGTH_SHORT).show();
+                }else{
+                    if(userPassword.equals(userCpassword)){
+                            Boolean checkuser =dbHelper.checkpassword(username,userPassword);
+                            if(!checkuser){
+                                        Boolean insert = dbHelper.insertData(username,useremail,userPassword);
+
+                                        if(insert){
+                                            Toast.makeText(getContext().getApplicationContext(), "Registered Successfully",Toast.LENGTH_SHORT).show();
+                                            editName.setText("");
+                                            editEmail.setText("");
+                                            editPassword.setText("");
+                                            editCpassword.setText("");
+
+                                            fragmentManager.beginTransaction()
+                                                    .replace(R.id.frame, new User_Login())
+                                                    .addToBackStack(null)  // Add to backstack so user can go back
+                                                    .commit();
+                                        }
+                            }else{
+                                Toast.makeText(getContext().getApplicationContext(),"User Alreay Exist",Toast.LENGTH_SHORT).show();
+
+                            }
+                    }else {
+                        Toast.makeText(getContext().getApplicationContext(),"Password does not matching",Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+            }
+        });
+
 
 
         signin.setOnClickListener(new View.OnClickListener() {
@@ -79,5 +146,6 @@ public class user_Registration extends Fragment {
         });
         // Inflate the layout for this fragment
         return view;
+
     }
 }
