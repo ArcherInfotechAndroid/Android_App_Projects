@@ -26,7 +26,6 @@ public class CourceAdaptor extends RecyclerView.Adapter<CourceAdaptor.CourceView
         CourceAdaptor.clickListner = clickListner;
     }
 
-
     public CourceAdaptor(List<Cources> courcesList)
     {
         this.courcesList=courcesList;

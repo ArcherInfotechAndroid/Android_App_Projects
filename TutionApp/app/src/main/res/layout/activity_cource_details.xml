@@ -306,7 +306,6 @@
                         android:textColor="@color/black"/>
 
                 </LinearLayout>
-
             </LinearLayout>
 
             <TextView
@@ -420,5 +419,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>

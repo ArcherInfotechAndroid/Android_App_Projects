@@ -17,7 +17,7 @@ import com.ArcherInfotech.tutionapp.Modal.Cources;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ItemClickListner {
+public class cource_list extends AppCompatActivity implements ItemClickListner {
 
     RecyclerView recyclerView;
     private List<Cources> courcesList;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListner 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.cource_list);
 
         recyclerView = findViewById(R.id.recyclerview);
         courcesList = new ArrayList<>();
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListner 
 
         Toast.makeText(this,"You Chose" +selectCource.getCourceName(),Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(MainActivity.this,Cource_Details.class);
-        intent.putExtra("Sport_Name",selectCource.getCourceName());
+        Intent intent = new Intent(cource_list.this,Cource_Details.class);
+        intent.putExtra("Cource_Name_One",selectCource.getCourceName());
 
         startActivity(intent);
     }
