@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cource_Details">
+    tools:context=".Cource_Details"
+    android:background="@drawable/shape">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -407,6 +408,7 @@
                     android:textColor="@color/white"/>
 
                 <TextView
+                    android:id="@+id/cancelbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Cancel"

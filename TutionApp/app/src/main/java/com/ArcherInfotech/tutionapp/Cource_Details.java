@@ -1,6 +1,10 @@
 package com.ArcherInfotech.tutionapp;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,10 +19,11 @@ public class Cource_Details extends AppCompatActivity {
     TextView courceTitle1,courceTitle2,courcepoint1,courcepoint2,courcepoint3,courcepoint4,courcepoint5,
             courcepoint6,courcepoint7,courcepoint8,courcepoint9,courcepoint10;
 
-    TextView instructername,instruinto1,instruinto2,instruinto3,instruinto4,fees;
+    TextView instructername,instruinto1,instruinto2,instruinto3,instruinto4,fees,cancel;
 
     ImageView insProfImg;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +59,7 @@ public class Cource_Details extends AppCompatActivity {
 
         //fees
         fees = findViewById(R.id.feestext);
+        cancel=findViewById(R.id.cancelbtn);
 
         //Coucres name
         String titleOne = getIntent().getStringExtra("Cource_Name_One");
@@ -107,5 +113,24 @@ public class Cource_Details extends AppCompatActivity {
 
         //Fess
         fees.setText(courceFees);
+
+        fees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Cource_Details.this, payment.class);
+                startActivity(intent);
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Cource_Details.this, cource_list.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

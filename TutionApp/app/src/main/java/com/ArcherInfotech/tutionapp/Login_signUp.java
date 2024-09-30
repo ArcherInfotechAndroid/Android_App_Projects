@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.ArcherInfotech.tutionapp.Adapter.FragmentStateAdapter;
+
 import com.ArcherInfotech.tutionapp.Adapter.ImageSliderAdapter;
 
 public class Login_signUp extends AppCompatActivity {
@@ -45,8 +45,6 @@ public class Login_signUp extends AppCompatActivity {
         fragmentManager.beginTransaction().replace(R.id.frame,new User_Login()).commit();
 
 
-
-
         
         userbtn = findViewById(R.id.userbtn);
         adminbtn = findViewById(R.id.adminbtn);
@@ -73,6 +71,7 @@ public class Login_signUp extends AppCompatActivity {
                 fragmentManager.beginTransaction().replace(R.id.frame,new Admin_login() ).commit();
                 adminbtn.setTextColor(getResources().getColor(R.color.ternary));
                 userbtn.setTextColor(getResources().getColor(R.color.primary));
+
             }
         });
 
