@@ -1,5 +1,6 @@
 package com.ArcherInfotech.tutionapp;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
+import android.widget.SeekBar;
+import android.widget.VideoView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +44,7 @@ public class howto extends Fragment {
     public static howto newInstance(String param1, String param2) {
         howto fragment = new howto();
         Bundle args = new Bundle();
+
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
@@ -60,5 +65,25 @@ public class howto extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_howto, container, false);
+    }
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+        VideoView videoView = view.findViewById(R.id.videoView);
+         SeekBar seekBar;
+        String videoPath = "android.resource://com.ArcherInfotech.tutionapp/" + R.raw.sample;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+        MediaController mediaController = new MediaController(getContext());
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+
+
+
+
+        videoView.start();
+
+
+
+
     }
 }

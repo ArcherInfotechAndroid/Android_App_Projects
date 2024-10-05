@@ -1,6 +1,5 @@
 package com.ArcherInfotech.tutionapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -110,7 +109,7 @@ public class user_Registration extends Fragment {
                                         Boolean insert = dbHelper.insertData(username,useremail,userPassword);
 
                                         if(insert){
-                                            Toast.makeText(getContext().getApplicationContext(), "Registered Successfully",Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(requireContext().getApplicationContext(), "Registered Successfully",Toast.LENGTH_SHORT).show();
                                             editName.setText("");
                                             editEmail.setText("");
                                             editPassword.setText("");
@@ -122,11 +121,11 @@ public class user_Registration extends Fragment {
                                                     .commit();
                                         }
                             }else{
-                                Toast.makeText(getContext().getApplicationContext(),"User Alreay Exist",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(requireContext().getApplicationContext(),"User Alreay Exist",Toast.LENGTH_SHORT).show();
 
                             }
                     }else {
-                        Toast.makeText(getContext().getApplicationContext(),"Password does not matching",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireContext().getApplicationContext(),"Password does not matching",Toast.LENGTH_SHORT).show();
 
                     }
                 }

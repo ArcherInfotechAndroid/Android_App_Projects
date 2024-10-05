@@ -16,15 +16,6 @@
          android:orientation="vertical">
 
 
-<!--         <TextView-->
-<!--             android:layout_width="match_parent"-->
-<!--             android:layout_height="match_parent"-->
-<!--             android:text="User Register"-->
-<!--             android:textSize="40dp"-->
-<!--             android:gravity="center"-->
-<!--             android:textStyle="bold"-->
-<!--             android:textColor="@color/primary"/>-->
-
          <EditText
              android:id="@+id/editfullname"
              android:layout_width="319dp"
@@ -34,6 +25,7 @@
              android:layout_marginEnd="5dp"
              android:layout_marginTop="40dp"
              android:textColor="@color/black"
+             android:inputType="text"
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
              android:elevation="10dp"
@@ -47,9 +39,11 @@
              android:layout_height="70dp"
              android:imeOptions="actionNext"
              android:layout_marginStart="5dp"
+             android:inputType="text"
              android:layout_marginEnd="5dp"
              android:textColor="@color/black"
              android:layout_marginTop="30dp"
+
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
              android:elevation="10dp"
@@ -65,6 +59,7 @@
              android:textColor="@color/black"
              android:layout_marginStart="5dp"
              android:layout_marginEnd="5dp"
+
              android:layout_marginTop="30dp"
              android:background="@drawable/input_bg"
              android:backgroundTint="@color/white"
@@ -78,11 +73,12 @@
          <EditText
             android:id="@+id/confirmpassword"
             android:layout_width="319dp"
-             android:imeOptions="actionNext"
+             android:imeOptions="actionDone"
             android:layout_height="70dp"
             android:textColor="@color/black"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
+
             android:layout_marginTop="30dp"
             android:textColorHint="#61000000"
             android:background="@drawable/input_bg"

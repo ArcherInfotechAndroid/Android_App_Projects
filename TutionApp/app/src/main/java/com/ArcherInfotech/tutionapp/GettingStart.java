@@ -48,11 +48,11 @@ public class GettingStart extends AppCompatActivity {
         });
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               startActivity(new Intent(GettingStart.this, Login_signUp.class));
-           }
-       });
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GettingStart.this, Login_signUp.class));
+            }
+        });
 
 
     }

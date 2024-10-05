@@ -74,7 +74,7 @@ public class User_Login extends Fragment {
         TextView dont = view.findViewById(R.id.dont);
         AppCompatButton loginbtn = view.findViewById(R.id.loginbtn);
 
-        AppCompatButton ancelbtn= view.findViewById(R.id.cancel);
+        AppCompatButton cancelbtn= view.findViewById(R.id.cancel);
         EditText editusername = view.findViewById(R.id.editusername);
         EditText editpassword = view.findViewById(R.id.editpassword);
         fragmentManager = getParentFragmentManager();
@@ -105,7 +105,7 @@ public class User_Login extends Fragment {
         });
 
 
-        DBHelper dbHelper = new DBHelper(getContext().getApplicationContext());
+        DBHelper dbHelper = new DBHelper(getContext());
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,8 +115,8 @@ public class User_Login extends Fragment {
                     editusername.setError("Please enter all the fields");
                 }else {
                     Boolean checkPassword =dbHelper.checkpassword(username,password);
-                    if(checkPassword ==true){
-                        Intent intent = new Intent(getContext().getApplicationContext(),MainActivity.class);
+                    if(checkPassword){
+                        Intent intent = new Intent(getContext(), AdmissionForm.class);
                         startActivity(intent);
                     }else {
                         editusername.setError("Invalid Credentials");
@@ -127,7 +127,7 @@ public class User_Login extends Fragment {
         });
         
         
-        ancelbtn.setOnClickListener(new View.OnClickListener() {
+        cancelbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                startActivity(new Intent(getContext().getApplicationContext(),GettingStart.class));
